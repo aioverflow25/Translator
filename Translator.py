@@ -7,10 +7,9 @@ import os
 
 # Load environment variables from .env file
 load_dotenv()
-api_key = os.getenv("GROQ_API_KEY")
+api_key = st.secrets["GROQ_API_KEY"]
 
-# Initialize the Groq language model
-model = ChatGroq(model="llama-3.1-8b-instant",api_key=api_key)
+model = ChatGroq(model="llama-3.1-8b-instant", api_key=api_key)
 
 # Output parser for simple text response
 parser = StrOutputParser()
